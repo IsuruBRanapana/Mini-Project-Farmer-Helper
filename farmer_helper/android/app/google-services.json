@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1009879942165",
+    "firebase_url": "https://farmer-helper-7651d.firebaseio.com",
+    "project_id": "farmer-helper-7651d",
+    "storage_bucket": "farmer-helper-7651d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009879942165:android:cb2b773f5f8562f1cc7a1c",
+        "android_client_info": {
+          "package_name": "com.isururanapana.farmer_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009879942165-3m4kuab71up69d46c4vn73nphdaa291r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrXk29lCZZNbYbrJKGM1gSWbVONc5eOqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009879942165-3m4kuab71up69d46c4vn73nphdaa291r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
