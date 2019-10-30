@@ -66,8 +66,16 @@ class _LoginState extends State<Login>{
               ),
             ),
           ),
+          signUpForm()
         ],
       )
+    );
+  }
+
+  Widget signUpForm(){
+    TextStyle textStyle=Theme.of(context).textTheme.title;
+    return Container(
+      
     );
   }
 }
