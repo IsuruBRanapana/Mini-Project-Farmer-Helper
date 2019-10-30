@@ -22,6 +22,30 @@ class _LoginState extends State<Login>{
                 fit: BoxFit.cover 
               ),
             ),
+            child: Center(
+              child:Column(
+                children: <Widget>[
+                  SizedBox()
+                  Text(
+                    'Farmer Helper',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 36.0,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    'Welcome to Farmer Helper',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w100,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       )
