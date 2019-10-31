@@ -99,6 +99,48 @@ class _LoginState extends State<Login>{
     );
   }
 
+  Widget _signInButton() {
+    return OutlineButton(
+      splashColor: Colors.grey,
+      onPressed: () async{
+        bool res=await AuthService().signInWithGoogle();
+        if(!res){
+          print('Error Log in with google');
+        }else{
+          Navigator.push(context,
+            MaterialPageRoute(builder: (context)=>Home())
+          );
+        }
+        setState(() {
+         //todo : set state 
+        });
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(image: AssetImage("images/google_logo.png"), height: 35.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                'Sign in with Google',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget signUpForm(){
     TextStyle textStyle=Theme.of(context).textTheme.title;
     return Container(
@@ -109,7 +151,7 @@ class _LoginState extends State<Login>{
           padding: EdgeInsets.only(
             right: _minimumPadding*3,
             left: _minimumPadding * 3,
-            top: _minimumPadding * 5,
+            top: _minimumPadding * 3,
           ),
           child: ListView(
             children: <Widget>[
@@ -183,28 +225,50 @@ class _LoginState extends State<Login>{
               ),
 
               //login
-              RaisedButton(
-                child: Text(
-                  'Login',
-                  textScaleFactor: 1.2,
+              Container(
+                height: 70.0,
+                padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
+                child: OutlineButton(
+                  splashColor: Colors.green[400],
+                  onPressed: () {},
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                  highlightElevation: 0,
+                  borderSide: BorderSide(color: Colors.green[400]),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            'Log in',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
-                textColor: Colors.white,
-                color: Color(0x),
-                onPressed: ()async {
-                  if(emailController.text.isEmpty||passwordController.text.isEmpty){
-                    print('Enter these');
-                    return;
-                  }else{
-                  bool res=await AuthService().signInWithEmail(emailController.text, passwordController.text);
-                  if(res==true){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>Home())
-                    );}
-                  }
-                  //todo: set state
-                },
               ),
 
+              //sign up with google
+              Container(
+                color: Colors.white,
+                child: Center(
+                 child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      _signInButton(),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
