@@ -230,7 +230,9 @@ class _LoginState extends State<Login>{
                 padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
                 child: OutlineButton(
                   splashColor: Colors.green[400],
-                  onPressed: () {},
+                  onPressed: () {
+                    //todo: add this
+                  },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                   highlightElevation: 0,
                   borderSide: BorderSide(color: Colors.green[400]),
@@ -256,8 +258,21 @@ class _LoginState extends State<Login>{
                 ),
               ),
 
+              //Text
+              Center(
+                child: Text(
+                  'OR',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14.0,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w600
+                    ),
+                ),
+              ),
               //sign up with google
               Container(
+                padding: EdgeInsets.only(top: 10.0),
                 color: Colors.white,
                 child: Center(
                  child: Column(
@@ -268,6 +283,37 @@ class _LoginState extends State<Login>{
                     ],
                   ),
                 ),
+              ),
+
+              //sign in with facebook
+              Container(
+                height: 70.0,
+                padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
+                child:RaisedButton(
+                  onPressed: (){
+                    //TODO : import
+                  },
+                  color: Colors.blue,
+                  child:Row(
+                    children: <Widget>[
+                      Image(
+                        image: AssetImage(
+                          "images/google_logo.png"
+                        ), 
+                        height: 35.0
+                      ),
+
+                      Text(
+                        'Sign in with Facabook',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          color: Colors.white
+                        ),
+                      ),
+                      
+                    ],
+                  ), 
+                ) 
               ),
             ],
           ),
