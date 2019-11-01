@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/auth.dart';
 import 'package:farmer_helper/app_screens/home.dart';
+import 'package:farmer_helper/app_screens/signup.dart';
 
 class Login extends StatefulWidget{
   @override
@@ -230,8 +231,19 @@ class _LoginState extends State<Login>{
                 padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
                 child: OutlineButton(
                   splashColor: Colors.green[400],
-                  onPressed: () {
-                    //todo: add this
+                  onPressed: () async{
+                    if(emailController.text.isEmpty||passwordController.text.isEmpty){
+                      print('Enter these');
+                      return;
+                    }else{
+                      bool res = await AuthService().signInWithEmail(emailController.text, passwordController.text);
+                      if(res==true){
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context)=>Home())
+                        );
+                      }
+                      //TODO: Set State
+                    }
                   },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                   highlightElevation: 0,
@@ -318,7 +330,47 @@ class _LoginState extends State<Login>{
                       )
                     ],
                   ), 
-                ) 
+                ),
+              ),
+
+              //sign up
+              Center(
+                child: Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 80.0,
+                    ),
+                    Text(
+                      "Don't Have Account ? ",
+                      style: TextStyle(
+                        color: Colors.green[400],
+                        fontSize: 16.0,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w700
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+                      },
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          color: Colors.green[400],
+                          fontSize: 16.0,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w700
+                        ),
+                      ),
+                    )
+                  ],
+                )
               ),
             ],
           ),
