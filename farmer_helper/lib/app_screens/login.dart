@@ -290,26 +290,34 @@ class _LoginState extends State<Login>{
                 height: 70.0,
                 padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
                 child:RaisedButton(
+                  shape: CircleAvatar(),
                   onPressed: (){
                     //TODO : import
                   },
-                  color: Colors.blue,
+                  color: Colors.lightBlue[900],
                   child:Row(
                     children: <Widget>[
                       Image(
                         image: AssetImage(
-                          "images/google_logo.png"
+                          "images/facebook_logo.png"
                         ), 
-                        height: 35.0
+                        height: 35.0,
+                        width: 35.0,
                       ),
-
-                      Text(
-                        'Sign in with Facabook',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.white
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 5.0),
+                          child: Text(
+                            'Sign in with Facabook',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.white
+                            ),
+                          ),
                         ),
-                      ),
+                      )
+                      
+                      
                       
                     ],
                   ), 
