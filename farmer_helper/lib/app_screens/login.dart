@@ -130,7 +130,7 @@ class _LoginState extends State<Login>{
               child: Text(
                 'Sign in with Google',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.grey,
                 ),
               ),
@@ -290,7 +290,7 @@ class _LoginState extends State<Login>{
                 height: 70.0,
                 padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
                 child:RaisedButton(
-                  shape: CircleAvatar(),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
                   onPressed: (){
                     //TODO : import
                   },
@@ -316,9 +316,6 @@ class _LoginState extends State<Login>{
                           ),
                         ),
                       )
-                      
-                      
-                      
                     ],
                   ), 
                 ) 
