@@ -1,6 +1,19 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:farmer_helper/app_screens/home.dart';
 
-class Splash extends StatelessWidget {
+class Splash extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return _SplashState();
+  }
+
+}
+class _SplashState extends State<Splash> {
+  void initState(){
+    super.initState();
+    Timer(Duration(seconds: 5),()=>Home());
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +42,7 @@ class Splash extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 60.0,
-                )
+                ),
               ],
             ),
           ),

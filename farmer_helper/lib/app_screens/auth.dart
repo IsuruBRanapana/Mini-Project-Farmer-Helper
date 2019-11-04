@@ -16,7 +16,7 @@ class AuthService{
     }
   }
 
-
+  //sign in with email
   Future<bool> signInWithEmail(String email, String password) async {
     try {
       AuthResult result = await _auth.signInWithEmailAndPassword(
@@ -40,6 +40,7 @@ class AuthService{
     }
   }
 
+  //sign in with google
   Future<bool> signInWithGoogle() async{
     try{
       GoogleSignIn googleSignIn=GoogleSignIn();
@@ -62,5 +63,6 @@ class AuthService{
       print('error logging with google');
       return false;
     }
+
   }
 }

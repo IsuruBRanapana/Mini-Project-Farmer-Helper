@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:farmer_helper/app_screens/auth.dart';
 
 class SignUp extends StatefulWidget{
   @override
@@ -202,7 +203,8 @@ class _SignUpState extends State<SignUp>{
                 padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
                 child:RaisedButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
-                  onPressed: (){
+                  onPressed: ()async{
+                    AuthService().signInWithEmail(emailController.text, passwordController.text);
                     //TODO : import
                     setState(() {
                       if (_formKey.currentState.validate()) {}
@@ -221,6 +223,9 @@ class _SignUpState extends State<SignUp>{
                   ),
                 ),
               ),
+
+              //TODO: Add drop down to select farmer or expert
+              
           ],
         ),
       ),
