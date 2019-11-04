@@ -73,6 +73,24 @@ class _HomeState extends State<Home>{
               },
             ),
 
+            Divider(
+              height: 2.0,
+              thickness: 2.0,
+              color: Colors.green[400],
+            ),
+
+            ListTile(
+              leading: Icon(
+                Icons.close,
+                color: Colors.red,
+              ),
+              title: Text(
+                'Close'
+              ),
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+            ),
           ],
         ),
       ),
