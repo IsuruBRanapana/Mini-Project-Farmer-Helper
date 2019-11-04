@@ -239,7 +239,10 @@ class _LoginState extends State<Login>{
                       bool res = await AuthService().signInWithEmail(emailController.text, passwordController.text);
                       if(res==true){
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=>Home())
+                          MaterialPageRoute(builder: (context)=>Home(
+                            value: emailController.text,
+                            ),
+                          )
                         );
                       }
                       //TODO: Set State
