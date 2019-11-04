@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:farmer_helper/app_screens/editprofile.dart';
+import 'package:farmer_helper/app_screens/viewprofile.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -39,6 +41,23 @@ class _HomeState extends State<Home>{
 
             ListTile(
               leading: Icon(
+                Icons.person,
+                color: Colors.red,
+              ),
+              title: Text(
+                'View Profile'
+              ),
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(
+                      builder: (context)=>ViewProfile()
+                    ),
+                );
+              },
+            ),
+
+            ListTile(
+              leading: Icon(
                 Icons.edit,
                 color: Colors.red,
               ),
@@ -52,7 +71,8 @@ class _HomeState extends State<Home>{
                     ),
                 );
               },
-            )
+            ),
+
           ],
         ),
       ),
