@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/editprofile.dart';
 import 'package:farmer_helper/app_screens/viewprofile.dart';
 
+
 class Home extends StatefulWidget{
+  final String value;
+  Home({Key key,this.value}):super(key: key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -29,7 +32,7 @@ class _HomeState extends State<Home>{
             UserAccountsDrawerHeader(
               //TODO: Add image
               accountEmail: Text(
-                'abcd'
+                '${widget.value}'
               ),
               accountName: Text(
                 'Account Name'
@@ -39,6 +42,7 @@ class _HomeState extends State<Home>{
               ),
             ),
 
+            //View profile
             ListTile(
               leading: Icon(
                 Icons.person,
@@ -56,6 +60,7 @@ class _HomeState extends State<Home>{
               },
             ),
 
+            //edit profile
             ListTile(
               leading: Icon(
                 Icons.edit,
@@ -79,6 +84,7 @@ class _HomeState extends State<Home>{
               color: Colors.green[400],
             ),
 
+            //close
             ListTile(
               leading: Icon(
                 Icons.close,
@@ -91,10 +97,23 @@ class _HomeState extends State<Home>{
                 Navigator.of(context).pop();
               },
             ),
+
+            //sign out
+            ListTile(
+              leading: Icon(
+                Icons.clear,
+                color: Colors.red,
+              ),
+              title: Text(
+                'Log Out'
+              ),
+              onTap: (){
+                //TODO: sign out
+              },
+            ),
           ],
         ),
       ),
     );
   }
-
 }
