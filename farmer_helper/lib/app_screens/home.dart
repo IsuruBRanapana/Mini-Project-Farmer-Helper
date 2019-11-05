@@ -106,6 +106,7 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.all(10.0),
           child: Container(
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
               color: Colors.green[400],
             ),
             child: Column(
@@ -118,6 +119,11 @@ class _HomeState extends State<Home> {
                   subtitle: Text(
                     "Can't solve this"
                     ),
+                ),
+                Image(
+                  width: 370.0,
+                  height: 300.0,
+                  image: AssetImage('images/Front.jpg'),
                 ),
               ],
             )
