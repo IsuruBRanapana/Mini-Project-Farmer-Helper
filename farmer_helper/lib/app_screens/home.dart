@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/editprofile.dart';
 import 'package:farmer_helper/app_screens/viewprofile.dart';
 
-
-class Home extends StatefulWidget{
+class Home extends StatefulWidget {
   final String value;
-  Home({Key key,this.value}):super(key: key);
+  Home({Key key, this.value}) : super(key: key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -13,7 +12,7 @@ class Home extends StatefulWidget{
   }
 }
 
-class _HomeState extends State<Home>{
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -21,9 +20,7 @@ class _HomeState extends State<Home>{
       appBar: AppBar(
         title: Text(
           'Home',
-          style: TextStyle(
-            color: Colors.white
-          ),
+          style: TextStyle(color: Colors.white),
         ),
       ),
       drawer: Drawer(
@@ -31,15 +28,9 @@ class _HomeState extends State<Home>{
           children: <Widget>[
             UserAccountsDrawerHeader(
               //TODO: Add image
-              accountEmail: Text(
-                '${widget.value}'
-              ),
-              accountName: Text(
-                'Account Name'
-              ),
-              decoration: BoxDecoration(
-                color: Colors.green[400]
-              ),
+              accountEmail: Text('${widget.value}'),
+              accountName: Text('Account Name'),
+              decoration: BoxDecoration(color: Colors.green[400]),
             ),
 
             //View profile
@@ -48,14 +39,11 @@ class _HomeState extends State<Home>{
                 Icons.person,
                 color: Colors.red,
               ),
-              title: Text(
-                'View Profile'
-              ),
-              onTap: (){
-                Navigator.push(context,
-                    MaterialPageRoute(
-                      builder: (context)=>ViewProfile()
-                    ),
+              title: Text('View Profile'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ViewProfile()),
                 );
               },
             ),
@@ -66,14 +54,11 @@ class _HomeState extends State<Home>{
                 Icons.edit,
                 color: Colors.red,
               ),
-              title: Text(
-                'Edit Profile'
-              ),
-              onTap: (){
-                Navigator.push(context,
-                    MaterialPageRoute(
-                      builder: (context)=>EditProfile()
-                    ),
+              title: Text('Edit Profile'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditProfile()),
                 );
               },
             ),
@@ -90,10 +75,8 @@ class _HomeState extends State<Home>{
                 Icons.close,
                 color: Colors.red,
               ),
-              title: Text(
-                'Close'
-              ),
-              onTap: (){
+              title: Text('Close'),
+              onTap: () {
                 Navigator.of(context).pop();
               },
             ),
@@ -104,10 +87,8 @@ class _HomeState extends State<Home>{
                 Icons.clear,
                 color: Colors.red,
               ),
-              title: Text(
-                'Log Out'
-              ),
-              onTap: (){
+              title: Text('Log Out'),
+              onTap: () {
                 //TODO: sign out
               },
             ),
@@ -118,16 +99,28 @@ class _HomeState extends State<Home>{
     );
   }
 
-  Widget problemList(){
+  Widget problemList() {
     return ListView(
       children: <Widget>[
-        
-        ListTile(
-          title: Text(
-            'About paddy'
-          ),
-          subtitle: Text(
-            "Can't solve this"
+        Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.green[400],
+            ),
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.adjust),
+                  title: Text(
+                    'About paddy'
+                    ),
+                  subtitle: Text(
+                    "Can't solve this"
+                    ),
+                ),
+              ],
+            )
           ),
         ),
       ],
