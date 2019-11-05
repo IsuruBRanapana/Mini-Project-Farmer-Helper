@@ -95,6 +95,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      //TODO: problem list in database
       body: problemList(),
     );
   }
@@ -115,16 +116,23 @@ class _HomeState extends State<Home> {
                   leading: Icon(Icons.adjust),
                   title: Text(
                     'About paddy'
-                    ),
+                  ),
                   subtitle: Text(
                     "Can't solve this"
-                    ),
+                  ),
+                  onTap: (){
+                    print('object');
+                  },
                 ),
                 Image(
                   width: 370.0,
-                  height: 300.0,
+                  height: 200.0,
                   image: AssetImage('images/Front.jpg'),
+                  fit: BoxFit.fill,
                 ),
+                SizedBox(
+                  height: 10.0,
+                )
               ],
             )
           ),
