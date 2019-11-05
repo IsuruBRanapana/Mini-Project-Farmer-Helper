@@ -114,6 +114,23 @@ class _HomeState extends State<Home>{
           ],
         ),
       ),
+      body: problemList(),
+    );
+  }
+
+  Widget problemList(){
+    return ListView(
+      children: <Widget>[
+        
+        ListTile(
+          title: Text(
+            'About paddy'
+          ),
+          subtitle: Text(
+            "Can't solve this"
+          ),
+        ),
+      ],
     );
   }
 }
