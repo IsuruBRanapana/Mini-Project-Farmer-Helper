@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:farmer_helper/app_screens/auth.dart';
+import 'package:farmer_helper/app_screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart' as prefix0;
 
 class SignUp extends StatefulWidget{
   @override
@@ -204,16 +205,21 @@ class _SignUpState extends State<SignUp>{
                 padding: EdgeInsets.only(left: 65.0,right: 65.0,top: 10.0, bottom: 10.0),
                 child:RaisedButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
-                  onPressed: (){
+                  onPressed: ()async{
                     if (_formKey.currentState.validate()) {
                       if(passwordController.text == conPasswordController.text){
-                        FirebaseAuth.instance.createUserWithEmailAndPassword(
+                        await FirebaseAuth.instance.createUserWithEmailAndPassword(
                           email: emailController.text,
                           password: passwordController.text
                         );
+                        Navigator.pop(context);
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context)=>Login(),
+                          )
+                        );
+                      //todo: add wrong password
                       }else{
                         //Todo: add password not match
-                        return "Password not match";
                       }
                     }
                     setState(() {
