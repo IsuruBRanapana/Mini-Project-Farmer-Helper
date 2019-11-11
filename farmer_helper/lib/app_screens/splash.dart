@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:farmer_helper/app_screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/home.dart';
 
@@ -12,7 +13,12 @@ class Splash extends StatefulWidget{
 class _SplashState extends State<Splash> {
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 5),()=>Home());
+    Future.delayed(Duration(seconds: 4),(){
+      Navigator.pushAndRemoveUntil(context,
+       MaterialPageRoute(builder: (context)=>Login()), 
+       (Route<dynamic> route)=>false
+       );
+    });
   }
   @override
   Widget build(BuildContext context) {

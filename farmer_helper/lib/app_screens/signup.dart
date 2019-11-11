@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart' as prefix0;
+import 'package:farmer_helper/app_screens/usermanagement.dart';
 
 class SignUp extends StatefulWidget{
   @override
@@ -11,6 +12,9 @@ class SignUp extends StatefulWidget{
 }
 
 class _SignUpState extends State<SignUp>{
+
+  UserManagement userObj=new UserManagement();
+
   bool _isHiddenPw = true;
   bool _isHiddenCPw = true;
 
@@ -37,6 +41,11 @@ class _SignUpState extends State<SignUp>{
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController conPasswordController = TextEditingController();
+
+  String firstname;
+  String lastname;
+  String useremail;
+  String phonenumber;
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +85,7 @@ class _SignUpState extends State<SignUp>{
                   if (value.isEmpty) {
                     return "Enter the E mail Address";
                   }
+                  useremail=emailController.text;
                   return null;
                 },
                 keyboardType: TextInputType.emailAddress,
@@ -106,6 +116,7 @@ class _SignUpState extends State<SignUp>{
                   if (value.isEmpty) {
                     return "Enter Your Phone Number";
                   }
+                  phonenumber=phoneNumberController.text;
                   return null;
                 },
                 keyboardType: TextInputType.phone,
@@ -212,7 +223,14 @@ class _SignUpState extends State<SignUp>{
                           email: emailController.text,
                           password: passwordController.text
                         );
+                        
                         Navigator.pop(context);
+                        userObj.addData({
+                          'firstname':this.firstname,
+                          'lastname':this.lastname,
+                          'email':this.useremail,
+                          'phonenumber':this.phonenumber
+                        });
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context)=>Login(),
                           )
@@ -221,6 +239,7 @@ class _SignUpState extends State<SignUp>{
                       }else{
                         //Todo: add password not match
                       }
+
                     }
                     setState(() {
                       //TODO : import  
@@ -258,6 +277,11 @@ class _SignUpState extends State<SignUp>{
           validator: (String value) {
             if (value.isEmpty) {
               return retEmpty;
+            }
+            if(txtController==firstNameController){
+              firstname=firstNameController.text;
+            }else{
+              lastname=lastNameController.text;
             }
             return null;
           },

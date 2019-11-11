@@ -63,6 +63,6 @@ class AuthService{
       print('error logging with google');
       return false;
     }
-
   }
+  
 }

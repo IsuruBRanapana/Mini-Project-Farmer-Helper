@@ -22,6 +22,20 @@ class _HomeState extends State<Home> {
           'Home',
           style: TextStyle(color: Colors.white),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.filter_list),
+            onPressed: (){
+
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){
+
+            },
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
