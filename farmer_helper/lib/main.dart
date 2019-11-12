@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_screens/login.dart';
 import 'app_screens/splash.dart';
+import 'package:farmer_helper/app_screens/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Splash(),
+      home: Home(),
       routes: <String, WidgetBuilder>{
         '/loginPage' : (BuildContext context) => Login()
       },
