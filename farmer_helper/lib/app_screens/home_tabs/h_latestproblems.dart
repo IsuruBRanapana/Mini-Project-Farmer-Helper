@@ -18,7 +18,7 @@ class _AllProblemState extends State<AllProblem> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Home',
+          'Latest Problems',
           style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[
@@ -116,11 +116,11 @@ class _AllProblemState extends State<AllProblem> {
         ),
       ),
       //TODO: problem list in database
-      body: problemList(),
+      body: latestProblemList(),
     );
   }
 
-  Widget problemList() {
+  Widget latestProblemList() {
     return ListView(
       children: <Widget>[
         Padding(
