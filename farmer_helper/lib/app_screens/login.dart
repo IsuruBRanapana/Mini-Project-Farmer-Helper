@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/auth.dart';
-import 'package:farmer_helper/app_screens/home.dart';
+import 'package:farmer_helper/app_screens/home_tabs/h_allproblems.dart';
 import 'package:farmer_helper/app_screens/signup.dart';
 
 class Login extends StatefulWidget{
@@ -109,7 +109,7 @@ class _LoginState extends State<Login>{
           print('Error Log in with google');
         }else{
           Navigator.push(context,
-            MaterialPageRoute(builder: (context)=>Home())
+            MaterialPageRoute(builder: (context)=>AllProblem())
           );
         }
         setState(() {
@@ -239,7 +239,7 @@ class _LoginState extends State<Login>{
                       bool res = await AuthService().signInWithEmail(emailController.text, passwordController.text);
                       if(res==true){
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=>Home(
+                          MaterialPageRoute(builder: (context)=>AllProblem(
                             value: emailController.text,
                             ),
                           )

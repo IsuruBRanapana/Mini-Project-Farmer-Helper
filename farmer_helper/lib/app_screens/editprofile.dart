@@ -1,5 +1,5 @@
+import 'package:farmer_helper/app_screens/home_tabs/h_allproblems.dart';
 import 'package:flutter/material.dart';
-import 'package:farmer_helper/app_screens/home.dart';
 import 'package:farmer_helper/app_screens/viewprofile.dart';
 class EditProfile extends StatefulWidget{
   @override
@@ -48,7 +48,7 @@ class EditProfileState extends State<EditProfile>{
               onTap: (){
                 Navigator.push(context,
                     MaterialPageRoute(
-                      builder: (context)=>Home()
+                      builder: (context)=>AllProblem()
                     ),
                 );
               },
