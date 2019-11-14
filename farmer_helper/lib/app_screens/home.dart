@@ -24,12 +24,6 @@ class _HomeState extends State<Home> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.filter_list),
-            onPressed: (){
-
-            },
-          ),
-          IconButton(
             icon: Icon(Icons.search),
             onPressed: (){
 
