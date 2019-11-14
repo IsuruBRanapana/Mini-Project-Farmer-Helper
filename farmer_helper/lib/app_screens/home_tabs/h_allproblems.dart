@@ -3,6 +3,7 @@ import 'package:farmer_helper/app_screens/editprofile.dart';
 import 'package:farmer_helper/app_screens/viewprofile.dart';
 
 class AllProblem extends StatefulWidget {
+  //Todo : Add shared preference
   final String value;
   AllProblem({Key key, this.value}) : super(key: key);
   @override
@@ -68,6 +69,19 @@ class _AllProblemState extends State<AllProblem> {
                 );
               },
             ),
+
+            //Change language
+            ListTile(
+              leading: Icon(
+                Icons.language,
+                color: Colors.red,
+              ),
+              title: Text('Change Language'),
+              onTap: () {
+                //Todo: create Change language page and set localization in app
+              },
+            ),
+
 
             Divider(
               height: 2.0,

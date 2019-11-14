@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_screens/login.dart';
 import 'app_screens/splash.dart';
-import 'package:farmer_helper/app_screens/home.dart';
 
 void main() => runApp(MyApp());
 

@@ -72,6 +72,19 @@ class EditProfileState extends State<EditProfile>{
               },
             ),
 
+            //Change language
+            ListTile(
+              leading: Icon(
+                Icons.language,
+                color: Colors.red,
+              ),
+              title: Text('Change Language'),
+              onTap: () {
+                //Todo: create Change language page and set localization in app
+              },
+            ),
+            
+
             Divider(
               height: 2.0,
               thickness: 2.0,
