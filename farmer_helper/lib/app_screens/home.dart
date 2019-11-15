@@ -66,7 +66,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
           LatestProblems.LatestProblem(),
           AccessCamera.AccessCamera(),
           FilterProblems.FilterProblem(),
-          AboutApp.,
+          AboutApp.FilterProblem(),
         ],
       ),
     );
