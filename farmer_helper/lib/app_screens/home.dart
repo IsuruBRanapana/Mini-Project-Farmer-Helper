@@ -6,6 +6,8 @@ import 'package:farmer_helper/app_screens/home_tabs/h_filteredproblems.dart' as 
 import 'package:farmer_helper/app_screens/home_tabs/h_aboutapp.dart' as AboutApp;
 
 class MyTabs extends StatefulWidget{
+  final String value;
+  MyTabs({Key key, this.value}) : super(key: key);
   @override
   State<StatefulWidget> createState() {
     return _MyTabsState();
@@ -29,32 +31,25 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text(
-          'Bottom Navigation'
-        ),
-      ),
-      bottomNavigationBar: 
-      Material(
-        color: Colors.deepOrange,
+      bottomNavigationBar: Material(
+        color: Colors.green[400],
         child: TabBar(
           controller: controller,
           tabs: <Tab>[
             Tab(
-              icon: Icon(Icons.access_alarms),
+              icon: Icon(Icons.home),
             ),
             Tab(
-              icon: Icon(Icons.backup),
+              icon: Icon(Icons.star),
             ),
             Tab(
-              icon: Icon(Icons.cake),
+              icon: Icon(Icons.camera),
             ),
             Tab(
-              icon: Icon(Icons.dashboard),
+              icon: Icon(Icons.filter_list),
             ),
             Tab(
-              icon: Icon(Icons.edit),
+              icon: Icon(Icons.person),
             )
           ],
         ),

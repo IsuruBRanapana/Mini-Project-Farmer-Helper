@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//todo: must remove back button that navigate login page
 class AccessCamera extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
