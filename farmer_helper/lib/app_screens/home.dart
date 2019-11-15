@@ -62,10 +62,10 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
       body: TabBarView(
         controller: controller,
         children: <Widget>[
-          AllProblems.,
-          LatestProblems.,
-          AccessCamera.,
-          FilterProblems.,
+          AllProblems.AllProblem(),
+          LatestProblems.LatestProblem(),
+          AccessCamera.AccessCamera(),
+          FilterProblems.FilterProblem(),
           AboutApp.,
         ],
       ),

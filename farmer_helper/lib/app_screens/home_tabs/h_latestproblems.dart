@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/editprofile.dart';
 import 'package:farmer_helper/app_screens/viewprofile.dart';
 
-class AllProblem extends StatefulWidget {
+class LatestProblem extends StatefulWidget {
   //Todo : Add shared preference
   final String value;
-  AllProblem({Key key, this.value}) : super(key: key);
+  LatestProblem({Key key, this.value}) : super(key: key);
   @override
   State<StatefulWidget> createState() {
-    return _AllProblemState();
+    return _LatestProblemState();
   }
 }
 
-class _AllProblemState extends State<AllProblem> {
+class _LatestProblemState extends State<LatestProblem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
