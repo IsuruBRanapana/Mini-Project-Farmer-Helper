@@ -115,8 +115,7 @@ class EditProfileState extends State<EditProfile>{
                 'Log Out'
               ),
               onTap: (){
-                Navigator.of(context).pop();
-                Navigator.of(context).pushReplacementNamed('/loginPage');
+                logOutAlert(context);
                 //TODO: Import dialog box want to sign out
               },
             ),
@@ -131,4 +130,34 @@ class EditProfileState extends State<EditProfile>{
       
     );
   }
+   Future<bool> logOutAlert(BuildContext context) async {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Log Out', style: TextStyle(fontSize: 15.0)),
+            content: Text('Are You Sure ?'),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('Yes'),
+                textColor: Colors.green[400],
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pushReplacementNamed('/loginPage');
+                },
+              ),
+              FlatButton(
+                child: Text('No'),
+                textColor: Colors.green[400],
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        }
+      );
+  }
+
 }
