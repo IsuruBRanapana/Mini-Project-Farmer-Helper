@@ -1,6 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+abstract class BaseAuth{
+  Future signInAnon();
+  Future<bool> signInWithEmail(String email, String password);
+  Future<void> logOut();
+  Future<bool> signInWithGoogle();
+}
+
 class AuthService{
   final FirebaseAuth _auth = FirebaseAuth.instance;
   
