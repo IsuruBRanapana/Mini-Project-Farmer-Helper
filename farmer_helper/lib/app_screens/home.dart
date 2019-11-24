@@ -19,11 +19,13 @@ class MyTabs extends StatefulWidget{
     }
   }
 
+
   @override
   State<StatefulWidget> createState() {
     return _MyTabsState();
   }
 }
+
 class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
 
   TabController controller;
@@ -52,6 +54,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
               ),
               title: Text('Log Out'),
               onTap: () {
+                
                 //TODO: sign out
               },
             ),
