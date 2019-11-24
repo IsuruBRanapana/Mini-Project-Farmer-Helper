@@ -10,14 +10,6 @@ class MyTabs extends StatefulWidget{
   MyTabs({this.auth,this.onSignedOut});
   final BaseAuth auth;
   final VoidCallback onSignedOut;
-  void _signOut() async{
-    try{
-      await auth.signOut();
-      onSignedOut();
-    }catch (e){
-      print(e);
-    }
-  }
 
 
   @override
@@ -33,6 +25,15 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
   void initState(){
     super.initState();
     controller=TabController(vsync: this,length: 5);
+  }
+
+ _signOut() {
+    try{
+      widget.auth.signOut();
+      widget.onSignedOut();
+    }catch (e){
+      print(e);
+    }
   }
 
   @override
@@ -54,7 +55,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
               ),
               title: Text('Log Out'),
               onTap: () {
-                
+                _signOut();
                 //TODO: sign out
               },
             ),
