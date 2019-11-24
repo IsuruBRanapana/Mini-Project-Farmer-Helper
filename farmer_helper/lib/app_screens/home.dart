@@ -1,3 +1,4 @@
+import 'package:farmer_helper/app_screens/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:farmer_helper/app_screens/home_tabs/h_allproblems.dart' as AllProblems;
 import 'package:farmer_helper/app_screens/home_tabs/h_latestproblems.dart' as LatestProblems;
@@ -6,8 +7,18 @@ import 'package:farmer_helper/app_screens/home_tabs/h_filteredproblems.dart' as 
 import 'package:farmer_helper/app_screens/home_tabs/h_aboutapp.dart' as AboutApp;
 
 class MyTabs extends StatefulWidget{
-  final String value;
-  MyTabs({Key key, this.value}) : super(key: key);
+  MyTabs({this.auth,this.onSignedOut});
+  final BaseAuth auth;
+  final VoidCallback onSignedOut;
+  void _signOut() async{
+    try{
+      await auth.signOut();
+      onSignedOut();
+    }catch (e){
+      print(e);
+    }
+  }
+
   @override
   State<StatefulWidget> createState() {
     return _MyTabsState();
@@ -31,6 +42,22 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              leading: Icon(
+                Icons.clear,
+                color: Colors.red,
+              ),
+              title: Text('Log Out'),
+              onTap: () {
+                //TODO: sign out
+              },
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: Material(
         color: Colors.green[400],
         child: TabBar(

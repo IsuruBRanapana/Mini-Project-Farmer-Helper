@@ -5,6 +5,10 @@ import 'package:farmer_helper/app_screens/home.dart';
 import 'package:flutter/material.dart' as prefix0;
 
 class Login extends StatefulWidget{
+  Login({this.auth,this.onSignedIn});
+  final BaseAuth auth;
+  final VoidCallback onSignedIn;
+  
   @override
   State<StatefulWidget> createState() {
     return _LoginState();
@@ -237,12 +241,11 @@ class _LoginState extends State<Login>{
                       print('Enter these');
                       return;
                     }else{
-                      bool res = await AuthService().signInWithEmail(emailController.text, passwordController.text);
-                      if(res==true){
+                      String userID=await AuthService().signInWithEmailAndPassword(emailController.text, passwordController.text);
+                      if(userID!=null){
                         Navigator.pop(context);
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context)=>MyTabs(
-                            value: emailController.text,
                             ),
                           )
                         );

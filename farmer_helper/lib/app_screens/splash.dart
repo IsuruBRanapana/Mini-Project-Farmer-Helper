@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:farmer_helper/app_screens/login.dart';
 import 'package:flutter/material.dart';
+import 'package:farmer_helper/app_screens/rootpage.dart';
+import 'package:farmer_helper/app_screens/auth.dart';
 import 'package:farmer_helper/app_screens/home.dart';
 
 class Splash extends StatefulWidget{
@@ -15,7 +17,7 @@ class _SplashState extends State<Splash> {
     super.initState();
     Future.delayed(Duration(seconds: 4),(){
       Navigator.pushAndRemoveUntil(context,
-       MaterialPageRoute(builder: (context)=>Login()), 
+       MaterialPageRoute(builder: (context)=>RootPage(auth: AuthService())), 
        (Route<dynamic> route)=>false
        );
     });
